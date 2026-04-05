@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-kindred.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 pb-16 pt-32">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-16">
       <img
         src={heroBg}
         alt="Уютный интерьер апартаментов"
@@ -12,14 +12,14 @@ const HeroSection = () => {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20" />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
+      <div className="relative z-10 max-w-4xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.95] mb-8"
+          className="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-[1.05] mb-6"
         >
           Путешествуйте
           <br />
@@ -30,7 +30,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-body text-lg md:text-xl text-white/80 mb-10 max-w-3xl"
+          className="font-body text-lg md:text-xl text-primary-foreground/75 mb-10 max-w-2xl mx-auto"
         >
           Закрытое сообщество владельцев недвижимости для размещения гостей в разных городах.
         </motion.p>
@@ -39,12 +39,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 mb-10"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
         >
-          <Button variant="hero" size="xl" className="text-base uppercase tracking-wider px-12">
+          <Button variant="hero" size="xl" className="px-10">
             Подходит ли мой дом?
           </Button>
-          <Button variant="heroOutline" size="xl" className="text-base uppercase tracking-wider px-12">
+          <Button variant="heroOutline" size="xl" className="px-10">
             Как это работает
           </Button>
         </motion.div>
@@ -53,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="font-body text-sm text-white/50"
+          className="font-body text-sm text-primary-foreground/40"
         >
           Без прямого обмена &bull; Для отпусков и сезонных переездов &bull; Верифицированные владельцы
         </motion.p>

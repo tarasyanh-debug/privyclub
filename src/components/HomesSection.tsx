@@ -22,10 +22,10 @@ const HomesSection = () => {
   const [activeCity, setActiveCity] = useState("Все");
 
   return (
-    <section id="homes" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground leading-tight">
+    <section id="homes" className="py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground leading-tight">
             Более 10 000 домов
             <br />
             по всей России и СНГ
@@ -38,7 +38,7 @@ const HomesSection = () => {
                 className={`px-4 py-2 rounded-full text-sm font-body transition-all duration-200 ${
                   activeCity === city
                     ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/70"
+                    : "bg-secondary text-secondary-foreground hover:bg-border"
                 }`}
               >
                 {city}
@@ -57,7 +57,7 @@ const HomesSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3]" style={{ boxShadow: "var(--shadow-card)" }}>
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
                 <img
                   src={home.image}
                   alt={home.desc}
@@ -66,9 +66,9 @@ const HomesSection = () => {
                   height={512}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <p className="font-body font-semibold text-primary-foreground text-base">
+                  <p className="font-heading font-semibold text-primary-foreground text-base">
                     Дом {home.name}
                   </p>
                   <p className="font-body text-primary-foreground/80 text-sm">

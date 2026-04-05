@@ -29,13 +29,13 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="faq" className="py-28 bg-background">
+      <div className="max-w-3xl mx-auto px-6 md:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-12 text-center"
+          className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-14 text-center"
         >
           Часто задаваемые вопросы
         </motion.h2>
@@ -52,7 +52,7 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-6 font-body font-medium text-foreground text-left hover:opacity-70 transition-opacity"
+                className="w-full flex items-center justify-between py-6 font-body font-medium text-foreground text-left hover:text-primary transition-colors"
               >
                 {faq.q}
                 <ChevronDown
