@@ -28,7 +28,7 @@ const HowItWorksSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground uppercase tracking-[0.15em]">
+          <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground">
             Как это работает
           </h2>
         </motion.div>
@@ -41,11 +41,12 @@ const HowItWorksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
+              className="text-center"
             >
-              <p className="font-heading text-4xl font-light text-muted-foreground mb-4">
+              <p className="font-heading text-5xl font-light text-muted-foreground/40 mb-4">
                 {step.num}
               </p>
-              <h3 className="font-heading text-lg font-bold text-foreground mb-3 uppercase">
+              <h3 className="font-heading text-lg font-medium text-foreground mb-3">
                 {step.title}
               </h3>
               <p className="font-body text-muted-foreground leading-relaxed">
