@@ -20,18 +20,18 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-secondary/40">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="py-28 bg-secondary/50">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-14 text-center"
+          className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-14 text-center"
         >
           Истории участников
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -39,13 +39,12 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="bg-background rounded-2xl p-8"
-              style={{ boxShadow: "var(--shadow-card)" }}
+              className="bg-background rounded-2xl p-8 border border-border"
             >
-              <div className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center mb-5">
-                <span className="font-heading text-sm font-medium text-foreground">{t.name[0]}</span>
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                <span className="font-heading text-sm font-bold text-primary">{t.name[0]}</span>
               </div>
-              <p className="font-heading text-lg font-medium text-foreground mb-1">
+              <p className="font-heading text-lg font-semibold text-foreground mb-1">
                 {t.name}
               </p>
               <p className="font-body text-sm text-muted-foreground mb-4">

@@ -9,15 +9,15 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="py-20 bg-primary">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-foreground">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground mb-2">
             Присоединяйтесь к самому быстрорастущему
             <br className="hidden md:block" />
             сообществу путешественников
@@ -34,10 +34,10 @@ const StatsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
+              <p className="font-heading text-4xl md:text-5xl font-extrabold text-primary mb-2">
                 {stat.value}
               </p>
-              <p className="font-body text-primary-foreground/70 text-sm">
+              <p className="font-body text-primary-foreground/60 text-sm">
                 {stat.label}
               </p>
             </motion.div>

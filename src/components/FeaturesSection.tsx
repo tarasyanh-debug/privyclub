@@ -12,9 +12,9 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="principles" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto overflow-hidden rounded-2xl">
+    <section id="principles" className="py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-3xl">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -33,7 +33,7 @@ const FeaturesSection = () => {
               {["Удалёнщики", "С питомцами", "Семьи", "Соло"].map((tag) => (
                 <span
                   key={tag}
-                  className="bg-white/80 backdrop-blur-sm text-foreground font-body text-xs px-3 py-1.5 rounded-full"
+                  className="bg-background/80 backdrop-blur-sm text-foreground font-body text-xs px-3 py-1.5 rounded-full"
                 >
                   {tag}
                 </span>
@@ -45,19 +45,19 @@ const FeaturesSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-background p-10 md:p-16 flex flex-col justify-center"
+            className="bg-secondary/50 p-10 md:p-16 flex flex-col justify-center"
           >
-            <p className="font-body text-sm text-muted-foreground uppercase tracking-[0.15em] mb-4">
+            <p className="font-body text-sm text-primary uppercase tracking-widest mb-4">
               Размещение
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-8 leading-tight">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
               Полная поддержка для новых хостов
             </h2>
 
             <div className="space-y-5">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-3 pb-5 border-b border-border last:border-b-0">
-                  <CheckCircle2 size={20} className="text-muted-foreground shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <CheckCircle2 size={20} className="text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
                   <p className="font-body text-foreground">{feature}</p>
                 </div>
               ))}

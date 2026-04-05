@@ -20,15 +20,15 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="how-it-works" className="py-28 bg-secondary/50">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             Как это работает
           </h2>
         </motion.div>
@@ -43,10 +43,10 @@ const HowItWorksSection = () => {
               transition={{ delay: i * 0.15 }}
               className="text-center"
             >
-              <p className="font-heading text-5xl font-light text-muted-foreground/40 mb-4">
+              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-5 font-heading font-bold text-sm">
                 {step.num}
-              </p>
-              <h3 className="font-heading text-lg font-medium text-foreground mb-3">
+              </div>
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
                 {step.title}
               </h3>
               <p className="font-body text-muted-foreground leading-relaxed">

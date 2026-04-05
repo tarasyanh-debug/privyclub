@@ -13,20 +13,20 @@ const CTASection = () => {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-foreground/60" />
 
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-medium text-white mb-6">
+          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             Присоединитесь к клубу
             <br />
             на этапе пилота
           </h2>
-          <p className="font-body text-white/75 text-lg mb-10 max-w-xl mx-auto">
+          <p className="font-body text-primary-foreground/70 text-lg mb-10 max-w-xl mx-auto">
             Первые участники получают пожизненное членство без вступительного взноса.
           </p>
           <Button variant="hero" size="xl">

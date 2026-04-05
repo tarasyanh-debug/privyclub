@@ -1,18 +1,18 @@
 const FooterSection = () => {
   return (
-    <footer className="py-12 bg-foreground">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="mb-8">
-          <h4 className="font-heading text-2xl font-medium text-white tracking-[0.1em] mb-3">
+    <footer className="py-16 bg-foreground">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="mb-12">
+          <h4 className="font-heading text-4xl md:text-6xl font-extrabold text-primary-foreground/10 mb-6">
             Privy
           </h4>
-          <p className="font-body text-white/50 text-sm">
+          <p className="font-body text-primary-foreground/50 text-sm max-w-md">
             Сообщество владельцев качественной недвижимости.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-white/10 pt-6">
-          <p className="font-body text-white/30 text-sm mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-primary-foreground/10 pt-8">
+          <p className="font-body text-primary-foreground/30 text-sm mb-4 md:mb-0">
             © 2026 Privy
           </p>
           <div className="flex gap-8">
@@ -20,7 +20,7 @@ const FooterSection = () => {
               <a
                 key={item}
                 href="#"
-                className="font-body text-white/50 text-sm hover:text-white transition-colors"
+                className="font-body text-primary-foreground/50 text-sm hover:text-primary-foreground transition-colors"
               >
                 {item}
               </a>

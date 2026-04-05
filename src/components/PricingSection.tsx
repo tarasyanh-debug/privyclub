@@ -14,16 +14,16 @@ const PricingSection = () => {
   const hotelCost = selectedNights * 10000;
 
   return (
-    <section id="pricing" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto overflow-hidden rounded-2xl">
+    <section id="pricing" className="py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-3xl bg-secondary/50">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-secondary/60 p-10 md:p-14 flex flex-col justify-center"
+            className="p-10 md:p-14 flex flex-col justify-center"
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-2 leading-tight">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2 leading-tight">
               Без оплаты проживания
               <br />
               внутри клуба.
@@ -37,7 +37,7 @@ const PricingSection = () => {
                 <select
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full bg-background text-foreground rounded-xl px-4 py-3 font-body border border-border focus:ring-2 focus:ring-foreground/20 outline-none appearance-none cursor-pointer"
+                  className="w-full bg-background text-foreground rounded-xl px-4 py-3 font-body border border-border focus:ring-2 focus:ring-primary/30 outline-none appearance-none cursor-pointer"
                 >
                   {cities.map((c) => (
                     <option key={c} value={c}>{c}</option>
@@ -51,7 +51,7 @@ const PricingSection = () => {
                 <select
                   value={selectedNights}
                   onChange={(e) => setSelectedNights(Number(e.target.value))}
-                  className="w-full bg-background text-foreground rounded-xl px-4 py-3 font-body border border-border focus:ring-2 focus:ring-foreground/20 outline-none appearance-none cursor-pointer"
+                  className="w-full bg-background text-foreground rounded-xl px-4 py-3 font-body border border-border focus:ring-2 focus:ring-primary/30 outline-none appearance-none cursor-pointer"
                 >
                   {nightOptions.map((n) => (
                     <option key={n} value={n}>
@@ -62,7 +62,7 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <p className="font-body text-sm font-medium text-foreground mb-4">Примерная стоимость</p>
+            <p className="font-body text-sm font-semibold text-foreground mb-4">Примерная стоимость</p>
 
             <div className="space-y-3 border-t border-border pt-4">
               <div className="flex justify-between font-body text-muted-foreground">
@@ -74,7 +74,7 @@ const PricingSection = () => {
                 <span>{serviceFee.toLocaleString()} ₽</span>
               </div>
               <div className="border-t border-border my-2" />
-              <div className="flex justify-between font-body text-foreground font-semibold text-lg">
+              <div className="flex justify-between font-body text-foreground font-bold text-lg">
                 <span>Итого</span>
                 <span>{selectedNights} кредитов + {serviceFee.toLocaleString()} ₽</span>
               </div>
