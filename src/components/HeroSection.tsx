@@ -12,14 +12,14 @@ const HeroSection = () => {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-background/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-[0.95] mb-8"
+          className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.95] mb-8"
         >
           Путешествуйте
           <br />
@@ -30,7 +30,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-body text-lg md:text-xl text-foreground/70 mb-10 max-w-3xl"
+          className="font-body text-lg md:text-xl text-white/80 mb-10 max-w-3xl"
         >
           Закрытое сообщество владельцев недвижимости для размещения гостей в разных городах.
         </motion.p>
@@ -41,10 +41,10 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 mb-10"
         >
-          <Button variant="default" size="xl" className="text-base uppercase tracking-wider px-12">
+          <Button variant="hero" size="xl" className="text-base uppercase tracking-wider px-12">
             Подходит ли мой дом?
           </Button>
-          <Button variant="outline" size="xl" className="text-base uppercase tracking-wider px-12">
+          <Button variant="heroOutline" size="xl" className="text-base uppercase tracking-wider px-12">
             Как это работает
           </Button>
         </motion.div>
@@ -53,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="font-body text-sm text-foreground/40"
+          className="font-body text-sm text-white/50"
         >
           Без прямого обмена &bull; Для отпусков и сезонных переездов &bull; Верифицированные владельцы
         </motion.p>
