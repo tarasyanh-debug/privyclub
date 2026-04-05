@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import InviteModal from "@/components/InviteModal";
 import heroBg from "@/assets/hero-kindred.jpg";
 
 const HeroSection = () => {
+  const [open, setOpen] = useState(false);
   return (
+    <>
+      <InviteModal open={open} onOpenChange={setOpen} />
     <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-16">
       <img
         src={heroBg}
@@ -41,7 +46,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
         >
-          <Button variant="hero" size="xl" className="px-10">
+          <Button variant="hero" size="xl" className="px-10" onClick={() => setOpen(true)}>
             Подходит ли мой дом?
           </Button>
           <Button variant="heroOutline" size="xl" className="px-10">
@@ -59,6 +64,7 @@ const HeroSection = () => {
         </motion.p>
       </div>
     </section>
+    </>
   );
 };
 
