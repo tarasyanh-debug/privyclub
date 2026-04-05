@@ -15,18 +15,18 @@ const cities = [
 
 const GeographySection = () => {
   return (
-    <section id="geography" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section id="geography" className="py-24 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-12 uppercase"
+          className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-12"
         >
           География
         </motion.h2>
 
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-3 gap-3 mb-3">
           {cities.slice(0, 3).map((city, i) => (
             <motion.div
               key={city.name}
@@ -42,17 +42,17 @@ const GeographySection = () => {
                 loading="lazy"
                 width={800}
                 height={600}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 font-heading font-bold text-background text-lg uppercase tracking-wider">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 font-heading font-medium text-white text-lg">
                 {city.name}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           {cities.slice(3, 5).map((city, i) => (
             <motion.div
               key={city.name}
@@ -68,10 +68,10 @@ const GeographySection = () => {
                 loading="lazy"
                 width={800}
                 height={600}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 font-heading font-bold text-background text-lg uppercase tracking-wider">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 font-heading font-medium text-white text-lg">
                 {city.name}
               </p>
             </motion.div>
