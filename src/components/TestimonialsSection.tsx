@@ -1,37 +1,27 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Мы забронировали 6 поездок по России всего за ₽25 000! У нас 31 ночь в Москве, Петербурге, Казани и Сочи. Это путешествие мечты, которое было бы невозможно без Своим.",
-    name: "Алина К.",
-    nights: 67,
+    name: "Иван",
+    location: "Апартаменты в Калининграде",
+    text: "Квартира раньше просто простаивала. За сезон накопил дней на две недели в Сочи",
   },
   {
-    text: "Я путешествую соло уже 10 лет и с годами всё сложнее находить комфортное жильё в рамках бюджета. Своим позволяет мне продолжать путешествовать, не жертвуя бюджетом на активности.",
-    name: "Дарья С.",
-    nights: 120,
+    name: "Мария",
+    location: "Квартира в Геленджике",
+    text: "Боялась пускать незнакомых. Но когда увидела что все проходят проверку и я сама выбираю кого принять — решилась. Уже три поездки.",
   },
   {
-    text: "Гости через Своим относятся к твоему дому с невероятной заботой. Ощущение, что тебя тихо поддерживают — бесценно. Это настоящее сообщество, а не просто сервис.",
-    name: "Роман Д.",
-    nights: 109,
+    name: "Дмитрий",
+    location: "Апартамент в Санкт-Петербурге",
+    text: "Апартамент в управлении УК, есть лимит ночей, который я раньше не использовал. Принял двух участников, использовал дни для поездок в Казань и Москву",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-heading text-3xl md:text-4xl font-bold text-foreground text-center mb-16"
-        >
-          Истории наших участников
-        </motion.h2>
-
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <motion.div
@@ -40,23 +30,17 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="bg-card rounded-2xl p-8 border border-border"
-              style={{ boxShadow: "var(--shadow-card)" }}
+              className="p-6"
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} size={16} className="fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="font-body text-foreground leading-relaxed mb-6 italic">
-                "{t.text}"
+              <p className="font-heading text-xl font-bold text-foreground mb-4 uppercase">
+                {t.name}
               </p>
-              <div className="flex items-center justify-between">
-                <p className="font-body font-semibold text-foreground">{t.name}</p>
-                <span className="font-body text-sm text-muted-foreground">
-                  {t.nights} ночей обмена
-                </span>
-              </div>
+              <p className="font-body font-semibold text-foreground mb-2">
+                {t.location}
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                {t.text}
+              </p>
             </motion.div>
           ))}
         </div>

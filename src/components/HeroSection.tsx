@@ -1,66 +1,52 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <img
-        src={heroBg}
-        alt="Уютный дом для обмена"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ background: "var(--hero-overlay)" }}
-      />
-
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <span className="inline-block font-body text-sm tracking-widest uppercase text-primary-foreground/80 mb-4">
-            №1 платформа обмена жильём в России
-          </span>
-        </motion.div>
-
+    <section className="min-h-screen flex items-center justify-start pt-16 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-5xl md:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-8"
         >
-          Меняйтесь домами.
+          Путешествуйте
           <br />
-          <span className="italic font-medium">Путешествуйте свободно.</span>
+          без аренды
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="font-body text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl"
         >
-          Закрытое сообщество для обмена жильём. Проживите до 5 ночей, прежде чем принять гостей. Для арендаторов и собственников.
+          Закрытое сообщество владельцев недвижимости для размещения гостей в разных городах.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4"
         >
-          <Button variant="hero" size="xl">
-            Подходит ли моё жильё?
+          <Button variant="default" size="xl" className="uppercase tracking-wider">
+            Подходит ли мой дом?
           </Button>
-          <Button variant="heroOutline" size="xl">
+          <Button variant="outline" size="xl" className="uppercase tracking-wider">
             Как это работает
           </Button>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="font-body text-sm text-muted-foreground mt-8"
+        >
+          Без прямого обмена &bull; Для отпусков и сезонных переездов &bull; Верифицированные владельцы
+        </motion.p>
       </div>
     </section>
   );
