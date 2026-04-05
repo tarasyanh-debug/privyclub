@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import InviteModal from "@/components/InviteModal";
 
 const navLinks = [
   { label: "О клубе", href: "#about" },
@@ -12,6 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [inviteOpen, setInviteOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -36,7 +38,7 @@ const Navbar = () => {
           <a href="#" className="font-body text-sm text-foreground/60 hover:text-foreground transition-colors">
             Вход
           </a>
-          <Button variant="default" size="sm">
+          <Button variant="default" size="sm" onClick={() => setInviteOpen(true)}>
             Подать заявку
           </Button>
         </div>
@@ -64,11 +66,12 @@ const Navbar = () => {
           ))}
           <div className="flex gap-3 pt-4">
             <Button variant="outline" size="sm" className="flex-1">Вход</Button>
-            <Button variant="default" size="sm" className="flex-1">Подать заявку</Button>
+            <Button variant="default" size="sm" className="flex-1" onClick={() => setInviteOpen(true)}>Подать заявку</Button>
           </div>
         </motion.div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 };
 

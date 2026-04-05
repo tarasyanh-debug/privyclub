@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import InviteModal from "@/components/InviteModal";
 import heroBg from "@/assets/hero-kindred.jpg";
 
 const CTASection = () => {
+  const [open, setOpen] = useState(false);
   return (
+    <>
+      <InviteModal open={open} onOpenChange={setOpen} />
     <section className="relative py-32 overflow-hidden">
       <img
         src={heroBg}
@@ -29,12 +34,13 @@ const CTASection = () => {
           <p className="font-body text-primary-foreground/70 text-lg mb-10 max-w-xl mx-auto">
             Первые участники получают пожизненное членство без вступительного взноса.
           </p>
-          <Button variant="hero" size="xl">
+          <Button variant="hero" size="xl" onClick={() => setOpen(true)}>
             Подать заявку
           </Button>
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 
