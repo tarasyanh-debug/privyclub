@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <>
       <InviteModal open={open} onOpenChange={setOpen} />
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-16">
+    <section className="relative min-h-[88vh] max-h-[92vh] flex flex-col justify-center items-center text-center px-6 pt-28 pb-20">
       <img
         src={heroBg}
         alt="Уютный интерьер апартаментов"
@@ -17,14 +17,14 @@ const HeroSection = () => {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
 
       <div className="relative z-10 max-w-4xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-[1.05] mb-6"
+          className="font-heading text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-[1.05] mb-6"
         >
           Путешествуйте
           <br />
@@ -44,7 +44,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-14"
         >
           <Button variant="hero" size="xl" className="px-10" onClick={() => setOpen(true)}>
             Подходит ли мой дом?
@@ -58,9 +58,14 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="font-body text-sm text-primary-foreground/40"
+          className="font-body text-sm text-primary-foreground/75 tracking-wide inline-flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 px-6 py-2.5 rounded-2xl bg-white/[0.07] backdrop-blur-sm border border-white/[0.1] mx-auto"
+          style={{ textShadow: "0 1px 10px rgba(0,0,0,0.55)" }}
         >
-          Без прямого обмена &bull; Для отпусков и сезонных переездов &bull; Верифицированные владельцы
+          <span>Без прямого обмена</span>
+          <span className="w-px h-3 bg-primary-foreground/25 rounded-full" aria-hidden="true" />
+          <span>Для отпусков и сезонных переездов</span>
+          <span className="w-px h-3 bg-primary-foreground/25 rounded-full" aria-hidden="true" />
+          <span>Верифицированные владельцы</span>
         </motion.p>
       </div>
     </section>

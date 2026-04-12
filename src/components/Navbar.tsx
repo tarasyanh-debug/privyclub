@@ -20,7 +20,7 @@ const Navbar = () => {
       <InviteModal open={inviteOpen} onOpenChange={setInviteOpen} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 md:px-10">
-          <a href="#" className="font-heading text-xl font-bold text-primary tracking-tight">
+          <a href="#" className="font-logo text-[1.45rem] font-medium text-primary leading-none tracking-normal">
             Privy
           </a>
 
@@ -36,12 +36,9 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="#" className="font-body text-sm text-foreground/60 hover:text-foreground transition-colors">
-              Вход
-            </a>
-            <Button variant="default" size="sm" onClick={() => setInviteOpen(true)}>
-              Подать заявку
+          <div className="hidden md:flex items-center">
+            <Button variant="default" size="sm" className="px-5" onClick={() => setInviteOpen(true)}>
+              Подходит ли мой дом?
             </Button>
           </div>
 
@@ -67,8 +64,7 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex gap-3 pt-4">
-              <Button variant="outline" size="sm" className="flex-1">Вход</Button>
-              <Button variant="default" size="sm" className="flex-1" onClick={() => setInviteOpen(true)}>Подать заявку</Button>
+              <Button variant="default" size="sm" className="flex-1" onClick={() => setInviteOpen(true)}>Подходит ли мой дом?</Button>
             </div>
           </motion.div>
         )}

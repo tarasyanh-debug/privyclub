@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import pricingImg from "@/assets/home-2.jpg";
+const PRICING_IMG = "https://images.pexels.com/photos/4740484/pexels-photo-4740484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=840&dpr=1";
 
 const cities = ["Москва", "Санкт-Петербург", "Казань", "Сочи", "Калининград"];
 const nightOptions = [3, 5, 7, 14, 21, 30];
@@ -12,6 +12,7 @@ const PricingSection = () => {
 
   const serviceFee = selectedNights * 1500;
   const hotelCost = selectedNights * 10000;
+  const savings = hotelCost - serviceFee;
 
   return (
     <section id="pricing" className="py-28 bg-background">
@@ -21,7 +22,7 @@ const PricingSection = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-10 md:p-14 flex flex-col justify-center"
+            className="p-6 sm:p-10 md:p-14 flex flex-col justify-center"
           >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2 leading-tight">
               Без оплаты проживания
@@ -66,8 +67,8 @@ const PricingSection = () => {
 
             <div className="space-y-3 border-t border-border pt-4">
               <div className="flex justify-between font-body text-muted-foreground">
-                <span>Кредиты</span>
-                <span>{selectedNights} кредитов</span>
+                <span>Ночи</span>
+                <span>{selectedNights} {selectedNights === 1 ? "ночь" : selectedNights < 5 ? "ночи" : "ночей"}</span>
               </div>
               <div className="flex justify-between font-body text-muted-foreground">
                 <span>Сервисный сбор</span>
@@ -76,15 +77,25 @@ const PricingSection = () => {
               <div className="border-t border-border my-2" />
               <div className="flex justify-between font-body text-foreground font-bold text-lg">
                 <span>Итого</span>
-                <span>{selectedNights} кредитов + {serviceFee.toLocaleString()} ₽</span>
+                <span>{selectedNights} {selectedNights === 1 ? "ночь" : selectedNights < 5 ? "ночи" : "ночей"} + {serviceFee.toLocaleString()} ₽</span>
               </div>
             </div>
 
-            <div className="mt-4 pt-2">
-              <p className="font-body text-muted-foreground text-sm">
-                Обычный отель&nbsp;&nbsp;
-                <span className="line-through">{hotelCost.toLocaleString()} ₽</span>
-              </p>
+            <div className="mt-4 pt-2 space-y-2">
+              <div>
+                <p className="font-body text-xs text-muted-foreground/70 uppercase tracking-wide mb-0.5">
+                  Обычный отель
+                </p>
+                <p className="font-body text-base font-medium text-foreground/60 line-through decoration-foreground/40 decoration-2">
+                  {hotelCost.toLocaleString()} ₽
+                </p>
+              </div>
+              <div className="flex items-baseline gap-2 pt-1">
+                <span className="font-body text-sm text-muted-foreground">Экономия:</span>
+                <span className="font-body text-lg font-semibold text-primary">
+                  {savings.toLocaleString()} ₽
+                </span>
+              </div>
             </div>
 
             <Button className="mt-8 self-start" size="lg">
@@ -96,16 +107,17 @@ const PricingSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="hidden md:block relative"
+            className="hidden md:block relative overflow-hidden"
           >
             <img
-              src={pricingImg}
-              alt="Интерьер квартиры"
+              src={PRICING_IMG}
+              alt="Уютная гостиная с утренним светом"
               loading="lazy"
-              width={720}
-              height={720}
+              width={1260}
+              height={840}
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(0,0,0,0.05), rgba(0,0,0,0))" }} />
           </motion.div>
         </div>
       </div>

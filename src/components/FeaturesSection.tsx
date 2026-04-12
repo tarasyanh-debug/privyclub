@@ -29,11 +29,11 @@ const FeaturesSection = () => {
               height={720}
               className="w-full h-full object-cover aspect-square md:aspect-auto"
             />
-            <div className="absolute bottom-0 left-0 right-0 flex gap-2 p-4">
+            <div className="absolute bottom-0 left-0 right-0 flex flex-wrap gap-2 p-4">
               {["Удалёнщики", "С питомцами", "Семьи", "Соло"].map((tag) => (
                 <span
                   key={tag}
-                  className="bg-background/80 backdrop-blur-sm text-foreground font-body text-xs px-3 py-1.5 rounded-full"
+                  className="bg-background/80 backdrop-blur-sm text-foreground font-body text-xs px-3 py-1.5 rounded-full whitespace-nowrap"
                 >
                   {tag}
                 </span>
@@ -45,7 +45,7 @@ const FeaturesSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-secondary/50 p-10 md:p-16 flex flex-col justify-center"
+            className="bg-secondary/50 p-6 sm:p-10 md:p-16 flex flex-col justify-center"
           >
             <p className="font-body text-sm text-primary uppercase tracking-widest mb-4">
               Размещение
