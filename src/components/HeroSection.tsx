@@ -49,7 +49,7 @@ const HeroSection = () => {
           <Button variant="hero" size="xl" className="px-10" onClick={() => setOpen(true)}>
             Подходит ли мой дом?
           </Button>
-          <Button variant="heroOutline" size="xl" className="px-10">
+          <Button variant="heroOutline" size="xl" className="px-10" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
             Как это работает
           </Button>
         </motion.div>
