@@ -15,7 +15,7 @@ const AboutSection = () => {
           >
             <p className="font-body text-sm text-primary-foreground/40 uppercase tracking-widest mb-3">О клубе</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight">
-              В чём суть Privy TEST123
+              В чём суть Privy
             </h2>
             <p className="font-body text-primary-foreground/70 leading-relaxed text-base">
               Когда у вас есть квартира, апартамент или дом, которые иногда пустуют — вы принимаете там участников клуба, а потом сами останавливаетесь у них в других городах — на дни или даже месяца.
