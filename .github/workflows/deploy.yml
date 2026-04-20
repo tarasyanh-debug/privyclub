@@ -32,4 +32,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./dist/
-          server-dir: /tarasybw.beget.tech/public_html/
+          server-dir: /privyclub.ru/public_html/
