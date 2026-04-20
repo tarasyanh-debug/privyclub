@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import InviteModal from "@/components/InviteModal";
+import ContactForm from "@/components/ContactForm";
 import heroBg from "@/assets/hero-kindred.jpg";
 
 const HeroSection = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <InviteModal open={open} onOpenChange={setOpen} />
+      <ContactForm open={open} onOpenChange={setOpen} />
     <section className="relative min-h-[88vh] max-h-[92vh] flex flex-col justify-center items-center text-center px-6 pt-28 pb-20">
       <img
         src={heroBg}

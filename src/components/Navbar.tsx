@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import InviteModal from "@/components/InviteModal";
+import ContactForm from "@/components/ContactForm";
 
 const navLinks = [
   { label: "О клубе", href: "#about" },
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <InviteModal open={inviteOpen} onOpenChange={setInviteOpen} />
+      <ContactForm open={inviteOpen} onOpenChange={setInviteOpen} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 md:px-10">
           <a href="#" className="font-logo text-[1.45rem] font-medium text-primary leading-none tracking-normal">

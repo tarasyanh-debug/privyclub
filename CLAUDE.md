@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Этот файл содержит инструкции для Claude Code (claude.ai/code) при работе с данным репозиторием.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Команды
 
@@ -14,7 +14,7 @@ npm run test:watch   # Запуск тестов в режиме слежени�
 npm run preview      # Предпросмотр продакшн-сборки
 ```
 
-Юнит-тесты находятся в `src/test/` и соответствуют паттерну `src/**/*.{test,spec}.{ts,tsx}` через Vitest с jsdom. Запуск одного файла: `npx vitest run src/test/example.test.ts`.
+Юнит-тесты находятся в `src/test/` и соответствуют паттерну `src/**/*.{test,spec}.{ts,tsx}` через Vitest с jsdom. Запуск одного файла: `npx vitest run src/test/example.test.ts`. Для компонентных тестов доступны `@testing-library/react` и `@testing-library/jest-dom` (настройка в `src/test/setup.ts`).
 
 Playwright установлен (`@playwright/test`), но npm-скрипт для него пока не настроен.
 
@@ -46,5 +46,13 @@ Playwright установлен (`@playwright/test`), но npm-скрипт дл
 **Состояние**: локальный `useState` для UI-состояния; TanStack React Query доступен, но пока почти не используется.
 
 **Path alias**: `@/` указывает на `src/` (настроено в `tsconfig.json` и `vite.config.ts`).
+
+**Иконки**: `lucide-react` — единственная иконочная библиотека, уже используется в `Navbar`.
+
+**Формы**: `react-hook-form` + `zod` установлены и готовы к использованию; `@hookform/resolvers` уже в зависимостях.
+
+**Хуки**: `src/hooks/use-mobile.tsx` — хук для определения мобильного брейкпоинта (`useIsMobile()`).
+
+**Якорные IDs секций**: `#about`, `#how-it-works`, `#geography`, `#features` — используются в навигации `Navbar`. Новые секции должны иметь соответствующий `id` атрибут.
 
 **Платформа Lovable**: `lovable-tagger` активен в конфиге Vite dev-сервера — внедряет метаданные компонентов для визуального редактора Lovable. Не удалять.

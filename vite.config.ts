@@ -13,6 +13,10 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  build: {
+    target: 'es2015',
+    modulePreload: false,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
